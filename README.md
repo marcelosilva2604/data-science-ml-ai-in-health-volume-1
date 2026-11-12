@@ -39,3 +39,9 @@ The Chapter 11 notebooks follow the revised chapter draft of 2026-11-12 (materni
 ## Notes
 
 The synthetic data and every teaching assumption (the 4-day allowance, the one-day alert rule) are stated in the notebook. Nothing here is a clinical recommendation or an estimate for a real unit.
+
+## Online
+
+Pages: https://marcelosilva2604.github.io/data-science-ml-ai-in-health-volume-1/ · Repository: https://github.com/marcelosilva2604/data-science-ml-ai-in-health-volume-1
+
+**The repository name and the `main` branch are printed in the book's QR codes. Do not rename, move, or delete them.** If the pages move (for example to the publisher's site), update the links in this README; the QR codes keep pointing here.
