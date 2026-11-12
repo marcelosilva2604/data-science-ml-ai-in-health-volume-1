@@ -22,3 +22,16 @@ checks = {
 bad = {k: v for k, v in checks.items() if v[0] != v[1]}
 assert not bad, bad
 print("all", len(checks), "checks pass")
+
+# The published result lines must carry the right numbers (EN and PT notebooks)
+import json
+nbdir = Path(__file__).resolve().parents[1] / "chapters/ch11"
+expected = {"ch11_probability_en.ipynb": ["1,216 of 5,000", "0.1184", "396/809", "851/1,499", "335/592", "662 alerts", "465", "282", "138",
+                                          "(1,499/5,000) × (114/1,499) × (29/114) = 29/5,000 = 0.0058", "69 traces", "17,666", "3.53"],
+            "ch11_probabilidade_pt.ipynb": ["1.216 de 5.000", "0,1184", "396/809", "851/1.499", "335/592", "662 alertas", "465", "282", "138",
+                                            "(1.499/5.000) × (114/1.499) × (29/114) = 29/5.000 = 0,0058", "69 traçados", "17.666", "3,53"]}
+for name, items in expected.items():
+    text = " ".join("".join(c["source"]) for c in json.load(open(nbdir / name))["cells"] if c["cell_type"] == "markdown")
+    missing = [i for i in items if i not in text]
+    assert not missing, (name, missing)
+print("notebook result lines carry the expected numbers")

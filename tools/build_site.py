@@ -41,6 +41,9 @@ def build(ch, lang, label, title, blurb, rel):
     nbformat.write(nb, nb_path)                       # keep outputs in the committed notebook
     body, _ = HTMLExporter(template_name="lab").from_notebook_node(nb)
     body = body.replace("</head>", NAV_CSS + "</head>", 1)
+    body = body.replace('<html lang="en"', f'<html lang="{lang}"', 1)
+    import re
+    body = re.sub(r"<title>.*?</title>", f"<title>{html.escape(label)}. {html.escape(title)}</title>", body, count=1, flags=re.S)
     body = body.replace("<body", "<body", 1)
     i = body.find(">", body.find("<body")) + 1
     body = body[:i] + bar(f"{label}. {title}", lang) + body[i:]

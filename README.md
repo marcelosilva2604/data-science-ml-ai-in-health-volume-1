@@ -17,7 +17,7 @@ All data are **synthetic**; no real patients appear. Each chapter is self-contai
 
 ```
 chapters/chNN/           notebook, data/, generate_data.py (everything the chapter needs)
-docs/                    HTML pages (index.html + one page per chapter), ready for GitHub Pages
+docs/                    HTML pages (index.html + one page per chapter and language), ready for GitHub Pages
 tools/                   build_chNN_notebook.py (writes the notebook), build_site.py (runs it, exports HTML)
 tests/                   test_chNN.py (checks the numbers quoted in the text against the data)
 ```
@@ -27,10 +27,14 @@ tests/                   test_chNN.py (checks the numbers quoted in the text aga
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cd chapters/ch11 && jupyter lab ch11_probability_en.ipynb      # or open the notebook in VS Code
+(cd chapters/ch11 && jupyter lab ch11_probability_en.ipynb)      # or open the notebook in VS Code
 ```
 
 Rebuild the pages: `python tools/build_ch11_notebook.py && python tools/build_site.py`. Check the numbers: `python tests/test_ch11.py`.
+
+## Revision
+
+The Chapter 11 notebooks follow the revised chapter draft of 2026-11-12 (maternity case). Some exercise inputs, such as the exact acidemia prevalence 0.0488 in Exercise 6 and the exact long-stay proportion 0.2432 in Exercise 11, follow that draft.
 
 ## Notes
 

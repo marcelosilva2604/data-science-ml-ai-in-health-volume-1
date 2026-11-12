@@ -91,6 +91,7 @@ plt.show()
 fig, ax = plt.subplots(figsize=(6, 3))
 ax.plot(np.arange(1, len(df) + 1), running, color=INK, lw=0.9)
 ax.axhline(X.mean(), color=MUTED, lw=0.8, ls=(0, (4, 2)))
+ax.yaxis.set_major_formatter(__import__("matplotlib.ticker", fromlist=["FuncFormatter"]).FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
 ax.set(xscale="log", xlim=(1, 5000), ylim=(0, 0.36), xlabel="Partos incluídos até então (escala log)",
        ylabel="Fração com internação > 4 dias", title="Fração acumulada de internações longas")
 plt.show()
@@ -127,13 +128,16 @@ for b, v in zip(bars, vals[::-1]):
 ax.set(xlim=(0, 0.7), xlabel="P(stay > 4 days | group)", title="Long stays by group (dashed: whole register)")
 plt.show()
 """, r"""
-labels = [g[0] for g in groups]
+names_pt = {"D": "Diabetes gestacional", "not D": "Sem diabetes", "C": "Cesárea", "not C": "Parto vaginal",
+            "any H/R/T": "Algum evento (H/R/T)", "no H/R/T": "Nenhum evento (H/R/T)"}
+labels = [names_pt[g[0]] for g in groups]
 vals = [X[g[1]].mean() for g in groups]
 fig, ax = plt.subplots(figsize=(6, 2.8))
 bars = ax.barh(labels[::-1], vals[::-1], color=[MUTED, INK] * 3)
 ax.axvline(X.mean(), color="black", lw=0.8, ls=(0, (4, 2)))
 for b, v in zip(bars, vals[::-1]):
     ax.text(v + 0.01, b.get_y() + b.get_height() / 2, f"{v:.3f}".replace(".", ","), va="center")
+ax.xaxis.set_major_formatter(__import__("matplotlib.ticker", fromlist=["FuncFormatter"]).FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
 ax.set(xlim=(0, 0.7), xlabel="P(internação > 4 dias | grupo)", title="Internação longa por grupo (tracejado: registro todo)")
 plt.show()
 """))
@@ -216,6 +220,7 @@ p_detect = 1 - np.array([comb(388, k) / comb(400, k) for k in n])
 fig, ax = plt.subplots(figsize=(6, 2.8))
 ax.plot(n, p_detect, color=INK, lw=1); ax.axhline(0.9, color=MUTED, lw=0.8, ls=(0, (4, 2)))
 ax.plot([20], [1 - none], "o", color=INK)
+ax.yaxis.set_major_formatter(__import__("matplotlib.ticker", fromlist=["FuncFormatter"]).FuncFormatter(lambda v, _: f"{v:g}".replace(".", ",")))
 ax.set(xlabel="Traçados amostrados (de 400)", ylabel="P(pelo menos uma discordância)", ylim=(0, 1.02),
        title="Supondo 12 de 400 traçados discordantes de uma leitura especialista")
 plt.show()
@@ -238,13 +243,15 @@ print(f"{mean_stay:.2f}", f"{4 - mean_stay:.2f}")
     def ex(n, title_en, title_pt, src=None, res_en=None, res_pt=None):
         md(f"### {T('Exercise', 'Exercício')} {n}. {T(title_en, title_pt)}")
         if src:
+            if pt:
+                src = (src.replace('"Alert"', '"Alerta"').replace('"No alert"', '"Sem alerta"')
+                          .replace('"Acidemia present"', '"Acidemia"').replace('"Acidemia absent"', '"Sem acidemia"'))
             code(src)
         if res_en:
             md(T("**Result:** " + res_en, "**Resultado:** " + res_pt))
 
     ex(1, "Sample space", "Espaço amostral", None,
-       "the eight descriptions of (H, R, T) are NNN, NNY, NYN, NYY, YNN, YNY, YYN, YYY; \"readmitted, no return\" = NYN, YYN; complement of \"some adverse event\" = NNN.",
-       "as oito descrições de (H, R, T) são NNN, NNY, NYN, NYY, YNN, YNY, YYN, YYY; \"reinternada, sem retorno\" = NYN, YYN; complemento de \"algum evento adverso\" = NNN.")
+       "conceptual exercise; the answer is in the book.", "exercício conceitual; a resposta está no livro.")
     ex(2, "The eight probabilities", "As oito probabilidades", r"""
 counts = df.groupby(["hemorrhage", "readmission", "return_to_theatre"]).size()
 for outcome, count in counts.items():
@@ -270,7 +277,7 @@ print(f"{p_x_c * C.mean() / p_x:.4f}", f"{C[X].mean():.4f}")
 chain = C.mean() * H[C].mean() * T[C & H].mean()
 print(int(C.sum()), int((C & H).sum()), int((C & H & T).sum()))
 print(f"{chain:.4f}", f"{(C & H & T).mean():.4f}")
-""", "1,499 × 114/1,499 × 29/114 = 29/5,000 = 0.0058.", "1.499 × 114/1.499 × 29/114 = 29/5.000 = 0,0058.")
+""", "(1,499/5,000) × (114/1,499) × (29/114) = 29/5,000 = 0.0058.", "(1.499/5.000) × (114/1.499) × (29/114) = 29/5.000 = 0,0058.")
     ex(6, "Alternative alert (alt.)", "Alerta alternativo (alt.)", r"""
 scenarios = [(0.95, A.mean()), (0.95, 0.20), (0.80, A.mean())]
 for sensitivity, prevalence in scenarios:
@@ -305,8 +312,7 @@ for n in range(1, 401):
         break
 """, "69 traces (0.90047); 68 gives 0.89674.", "69 traçados (0,90047); 68 dá 0,89674.")
     ex(10, "Alternative marginals (alt.)", "Marginais alternativas (alt.)", None,
-       "the plain sum 0.08 holds only if P(H and R) = 0; the true probability lies between 0.06 and 0.08.",
-       "a soma simples 0,08 vale apenas se P(H e R) = 0; a probabilidade verdadeira fica entre 0,06 e 0,08.")
+       "conceptual exercise; the answer is in the book.", "exercício conceitual; a resposta está no livro.")
     ex(11, "Five years of 200 deliveries (alt.)", "Cinco anos de 200 partos (alt.)", r"""
 rng = random.Random(10)
 probability = float(X.mean())
@@ -319,8 +325,8 @@ for year, count in enumerate(annual_counts, start=1):
        "proporções anuais 0,2150, 0,2750, 0,2350, 0,2050, 0,2250; acumuladas 0,2150, 0,2450, 0,2417, 0,2325, 0,2310.")
     ex(12, "Kinds of probability", "Tipos de probabilidade", r"""
 print(int((H & D).sum()), int(D.sum()), int(H.sum()), int((A & F).sum()), int(F.sum()))
-""", "(a) conditional 72/809; (b) joint 72/5,000; (c) marginal 299/5,000; (d) conditional 72/299; (e) conditional 197/662.",
-       "(a) condicional 72/809; (b) conjunta 72/5.000; (c) marginal 299/5.000; (d) condicional 72/299; (e) condicional 197/662.")
+""", "the counts behind the five statements are printed above (H and D, D, H, A and F, F); the classification is in the book.",
+       "as contagens por trás das cinco afirmações estão impressas acima (H e D, D, H, A e F, F); a classificação está no livro.")
 
     md(T("---\n*Synthetic data (seed 11, `generate_data.py`). Teaching assumptions only; nothing here is a clinical recommendation or an estimate for a real unit.*",
          "---\n*Dados sintéticos (semente 11, `generate_data.py`). Apenas hipóteses didáticas; nada aqui é recomendação clínica nem estimativa para uma unidade real.*"))
