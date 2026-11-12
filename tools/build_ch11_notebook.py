@@ -340,5 +340,5 @@ print(int((H & D).sum()), int(D.sum()), int(H.sum()), int((A & F).sum()), int(F.
 
 
 if __name__ == "__main__":
-    for l in FILES:
-        build(l)
+    # one language per repository: tools/LANG holds "en" or "pt"
+    build((Path(__file__).resolve().parent / "LANG").read_text().strip())

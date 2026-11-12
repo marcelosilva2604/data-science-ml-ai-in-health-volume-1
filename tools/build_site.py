@@ -52,17 +52,32 @@ def build(ch, lang, label, title, blurb, rel):
 
 def index():
     items = "".join(
-        f'<li><a href="{ch}.html"><b>{html.escape(label)}. {html.escape(title)}</b></a> <small>[{lang.upper()}]</small><br><span>{html.escape(blurb)}</span></li>'
+        f'<li><a href="{ch}.html"><b>{html.escape(label)}. {html.escape(title)}</b></a><br><span>{html.escape(blurb)}</span></li>'
         for ch, lang, label, title, blurb, rel in CHAPTERS)
-    page = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Data Science and Artificial Intelligence in Health, Volume 1: companion notebooks</title>
+    if LANG == "pt":
+        head = "Fundamentos da Análise de Dados em Saúde"
+        sub = "Dados, Delineamento de Estudos, Probabilidade e Inferência Clássica · Volume 1 · cadernos complementares"
+        blurb = "Cadernos complementares ao livro (não o reproduzem): a Parte A percorre o caso do capítulo; a Parte B traz o código e o resultado de cada exercício. Todos os dados são sintéticos."
+        foot = "Novos capítulos serão acrescentados à medida que ficarem prontos. Cada capítulo é autônomo: lê apenas os próprios dados."
+        doc_lang, doc_title = "pt", "Fundamentos da Análise de Dados em Saúde, Volume 1: cadernos complementares"
+    else:
+        head = "Foundations of Data Analysis in Health"
+        sub = "Data, Study Design, Probability, and Classical Inference · Volume 1 · companion notebooks"
+        blurb = "Companion notebooks to the book (they do not reproduce it): Part A follows the chapter's case, Part B gives the code and result of each exercise. All data are synthetic."
+        foot = "More chapters will be added as they are finished. Each chapter is self-contained: it reads only its own data."
+        doc_lang, doc_title = "en", "Foundations of Data Analysis in Health, Volume 1: companion notebooks"
+    page = f"""<!DOCTYPE html><html lang="{doc_lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{doc_title}</title>
 <style>body{{font:16px/1.55 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#1f2933}}
-h1{{font-size:26px;margin-bottom:4px}}li{{margin:16px 0}}a{{color:#0b5cad}}.nb{{font-size:13px;margin-left:8px}}p.s{{color:#52606d}}</style></head><body>
-<h1>Data Science and Artificial Intelligence in Health</h1>
-<p class="s">Volume 1 companion. Companion notebooks to the book (they do not reproduce it): Part A follows the chapter's case, Part B gives the code and result of each exercise. English and Portuguese. All data are synthetic.</p>
+h1{{font-size:26px;margin-bottom:4px}}li{{margin:16px 0}}a{{color:#0b5cad}}p.s{{color:#52606d}}</style></head><body>
+<h1>{head}</h1><p class="s">{sub}</p>
+<p class="s">{blurb}</p>
 <ul>{items}</ul>
-<p class="s">More chapters will be added as they are finished. Each chapter is self-contained: it reads only its own data.</p></body></html>"""
+<p class="s">{foot}</p></body></html>"""
     (DOCS / "index.html").write_text(page, encoding="utf-8")
+
+LANG = (Path(__file__).resolve().parent / "LANG").read_text().strip()
+CHAPTERS = [c for c in CHAPTERS if c[1] == LANG]
 
 if __name__ == "__main__":
     DOCS.mkdir(exist_ok=True)

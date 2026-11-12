@@ -1,6 +1,8 @@
-# Data Science and Artificial Intelligence in Health, Volume 1: companion notebooks
+# Foundations of Data Analysis in Health, Volume 1: companion notebooks
 
-Companion notebooks to the book, one per chapter and language (English and Portuguese). They **do not reproduce the book**: definitions, derivations, and explanations stay in the book. Each notebook runs from the first cell to the last and has two parts:
+*Data, Study Design, Probability, and Classical Inference.* Part of the work **Data Science and Artificial Intelligence in Health**.
+
+Companion notebooks to the book, one per chapter (English edition). They **do not reproduce the book**: definitions, derivations, and explanations stay in the book. Each notebook runs from the first cell to the last and has two parts:
 
 - **Part A. The case**: the chapter's single case, with the calculations and figures.
 - **Part B. Exercise solutions**: the code and numeric result for each chapter exercise (statements are in the book).
@@ -11,14 +13,14 @@ All data are **synthetic**; no real patients appear. Each chapter is self-contai
 
 | Chapter | Case | Notebooks | Pages |
 |---|---|---|---|
-| 11. Probability: The Language of Uncertainty | Public maternity unit, 5,000 deliveries | `chapters/ch11/ch11_probability_en.ipynb`, `ch11_probabilidade_pt.ipynb` | `docs/ch11_en.html`, `docs/ch11_pt.html` |
+| 11. Probability: The Language of Uncertainty | Public maternity unit, 5,000 deliveries | `chapters/ch11/ch11_probability_en.ipynb` | `docs/ch11_en.html` |
 
 ## Layout
 
 ```
 chapters/chNN/           notebook, data/, generate_data.py (everything the chapter needs)
-docs/                    HTML pages (index.html + one page per chapter and language), ready for GitHub Pages
-tools/                   build_chNN_notebook.py (writes the notebook), build_site.py (runs it, exports HTML)
+docs/                    HTML pages (index.html + one page per chapter), ready for GitHub Pages
+tools/                   build_chNN_notebook.py (writes the notebook), build_site.py (runs it, exports HTML), LANG
 tests/                   test_chNN.py (checks the numbers quoted in the text against the data)
 ```
 
