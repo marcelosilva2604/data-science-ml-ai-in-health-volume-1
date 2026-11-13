@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 CHAPTERS = [
     ("ch10_en", "en", "Chapter 10", "Experimental and Quasi-Experimental Designs in Health",
-     "Case: a hypertension clinic decides whether to offer a single pill instead of separate tablets.", "chapters/ch10/ch10_experimental_designs_en.ipynb"),
+     "Case: a hypertension service with ten clinics decides whether to offer a single pill instead of separate tablets.", "chapters/ch10/ch10_experimental_designs_en.ipynb"),
     ("ch11_en", "en", "Chapter 11", "Probability: The Language of Uncertainty",
      "Case: a public maternity unit plans its postnatal beds.", "chapters/ch11/ch11_probability_en.ipynb"),
     ("ch11_pt", "pt", "Capítulo 11", "Probabilidade: a linguagem da incerteza",

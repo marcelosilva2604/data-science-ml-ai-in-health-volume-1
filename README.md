@@ -13,7 +13,7 @@ All data are **synthetic**; no real patients appear. Each chapter is self-contai
 
 | Chapter | Case | Notebooks | Pages |
 |---|---|---|---|
-| 10. Experimental and Quasi-Experimental Designs in Health | Hypertension clinic: single pill versus separate tablets | `chapters/ch10/ch10_experimental_designs_en.ipynb` | `docs/ch10_en.html` |
+| 10. Experimental and Quasi-Experimental Designs in Health | Hypertension service with ten clinics: single pill versus separate tablets | `chapters/ch10/ch10_experimental_designs_en.ipynb` | `docs/ch10_en.html` |
 | 11. Probability: The Language of Uncertainty | Public maternity unit, 5,000 deliveries | `chapters/ch11/ch11_probability_en.ipynb` | `docs/ch11_en.html` |
 
 ## Layout
