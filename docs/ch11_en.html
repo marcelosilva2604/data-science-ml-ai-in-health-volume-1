@@ -7803,7 +7803,7 @@ a.anchor-link {
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><div class="vol-bar"><a href="index.html"><b>Volume 1</b></a><span>Chapter 11. Probability: The Language of Uncertainty</span><span class="grow"></span><a href="#Part-A.-The-case">Part A. The case</a><a href="#Part-B.-Exercise-solutions">Part B. Exercise solutions</a></div>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1b4c3f4e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a43c9872">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7819,7 +7819,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ebe48d1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=61ba9e29">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7829,7 +7829,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cbe6f1d1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=960ce2f8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7930,7 +7930,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f080c3b6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9bb29c3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7940,7 +7940,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7379ae08">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=48f32e55">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7952,28 +7952,30 @@ a.anchor-link {
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/deliveries.csv"</span><span class="p">)</span>
 
+<span class="k">def</span><span class="w"> </span><span class="nf">num</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span>                    <span class="c1"># 5,000</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dec</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span> <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">"</span>           <span class="c1"># 0.0663</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pct</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span>                  <span class="c1"># 26.26%</span>
+
 <span class="c1"># 1. Take all the rows: one row is one delivery</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Deliveries in the register: </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The register has </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> deliveries."</span><span class="p">)</span>
 
 <span class="c1"># 2. In each row, look at the column: is it "yes"?</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"cesarean"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"yes"</span>
 <span class="n">H</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"hemorrhage"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"yes"</span>
 <span class="n">I</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"infection"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"yes"</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"cesarean"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">(),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">n_c</span><span class="p">,</span> <span class="n">n_h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Of the </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> deliveries, </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n_c</span><span class="p">)</span><span class="si">}</span><span class="s2"> were cesarean and </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n_c</span><span class="p">)</span><span class="si">}</span><span class="s2"> were not."</span><span class="p">)</span>
 
 <span class="c1"># 3. Count the "yes" rows and divide by all the rows</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">event</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">"cesarean"</span><span class="p">,</span> <span class="n">C</span><span class="p">),</span> <span class="p">(</span><span class="s2">"hemorrhage"</span><span class="p">,</span> <span class="n">H</span><span class="p">)):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;11</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">count</span><span class="si">:</span><span class="s2">&gt;5,</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> deliveries = </span><span class="si">{</span><span class="n">count</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cesarean:   </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n_c</span><span class="p">)</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> deliveries = </span><span class="si">{</span><span class="n">pct</span><span class="p">(</span><span class="n">n_c</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hemorrhage: </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n_h</span><span class="p">)</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> deliveries = </span><span class="si">{</span><span class="n">pct</span><span class="p">(</span><span class="n">n_h</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 4. Read the register in order: does the fraction of cesareans settle?</span>
-<span class="n">running</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># cesareans so far / rows read so far</span>
-<span class="n">checkpoints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"rows read"</span><span class="p">:</span> <span class="n">checkpoints</span><span class="p">,</span>
-                    <span class="s2">"cesareans so far"</span><span class="p">:</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">checkpoints</span><span class="p">],</span>
-                    <span class="s2">"fraction"</span><span class="p">:</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">running</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">checkpoints</span><span class="p">]})</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="n">running</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1"># cesareans so far / rows read so far</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Reading the register in order:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  after </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;5</span><span class="si">}</span><span class="s2"> rows: </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="si">:</span><span class="s2">&gt;5</span><span class="si">}</span><span class="s2"> cesareans = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">running</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
@@ -7995,21 +7997,18 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Deliveries in the register: 5,000
-cesarean
-no     3687
-yes    1313 
+<pre>The register has 5,000 deliveries.
+Of the 5,000 deliveries, 1,313 were cesarean and 3,687 were not.
+Cesarean:   1,313 of 5,000 deliveries = 26.26%
+Hemorrhage: 290 of 5,000 deliveries = 5.80%
 
-cesarean    1,313 of 5,000 deliveries = 26.26%
-hemorrhage    290 of 5,000 deliveries = 5.80%
-
- rows read  cesareans so far  fraction
-        10                 5    0.5000
-        50                19    0.3800
-       100                27    0.2700
-       500               123    0.2460
-      1000               246    0.2460
-      5000              1313    0.2626
+Reading the register in order:
+  after    10 rows:     5 cesareans = 0.5000
+  after    50 rows:    19 cesareans = 0.3800
+  after   100 rows:    27 cesareans = 0.2700
+  after   500 rows:   123 cesareans = 0.2460
+  after 1,000 rows:   246 cesareans = 0.2460
+  after 5,000 rows: 1,313 cesareans = 0.2626
 </pre>
 </div>
 </div>
@@ -8022,7 +8021,7 @@ hemorrhage    290 of 5,000 deliveries = 5.80%
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4836fdd1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5aff407e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8032,7 +8031,7 @@ hemorrhage    290 of 5,000 deliveries = 5.80%
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=63105385">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6ea4bc59">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8041,20 +8040,19 @@ hemorrhage    290 of 5,000 deliveries = 5.80%
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Cross the two columns: each delivery falls in exactly one of four cells</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hemorrhage (rows) by infection (columns):"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"hemorrhage"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"infection"</span><span class="p">],</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">margins_name</span><span class="o">=</span><span class="s2">"Total"</span><span class="p">),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. Add the two groups, then correct for the mothers counted twice</span>
 <span class="n">hemorrhage</span><span class="p">,</span> <span class="n">infection</span><span class="p">,</span> <span class="n">both</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">((</span><span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hemorrhage:               </span><span class="si">{</span><span class="n">hemorrhage</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection:                </span><span class="si">{</span><span class="n">infection</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Adding the two:           </span><span class="si">{</span><span class="n">hemorrhage</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">infection</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2">   (the </span><span class="si">{</span><span class="n">both</span><span class="si">}</span><span class="s2"> mothers with both are counted twice)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Both:                     </span><span class="si">{</span><span class="n">both</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hemorrhage or infection:  </span><span class="si">{</span><span class="n">hemorrhage</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">infection</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">both</span><span class="si">:</span><span class="s2">&gt;4</span><span class="si">}</span><span class="s2">   = </span><span class="si">{</span><span class="n">hemorrhage</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">infection</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">both</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">hemorrhage</span><span class="si">}</span><span class="s2"> mothers had a hemorrhage and </span><span class="si">{</span><span class="n">infection</span><span class="si">}</span><span class="s2"> had an infection."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Adding the two gives </span><span class="si">{</span><span class="n">hemorrhage</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">infection</span><span class="si">}</span><span class="s2">, but the </span><span class="si">{</span><span class="n">both</span><span class="si">}</span><span class="s2"> mothers with both were counted twice."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hemorrhage or infection: </span><span class="si">{</span><span class="n">hemorrhage</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">infection</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">both</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">hemorrhage</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">infection</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">both</span><span class="si">}</span><span class="s2"> mothers.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 3. Check by counting directly, and count the mothers with neither</span>
-<span class="n">either</span> <span class="o">=</span> <span class="n">H</span> <span class="o">|</span> <span class="n">I</span>                           <span class="c1"># True when the row has at least one of the two</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Counted directly:  </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">either</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">either</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"With neither:      </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="o">~</span><span class="n">either</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="p">(</span><span class="o">~</span><span class="n">either</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">either</span> <span class="o">=</span> <span class="n">H</span> <span class="o">|</span> <span class="n">I</span>                              <span class="c1"># True when the row has at least one of the two</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Counted directly: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">either</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> mothers = </span><span class="si">{</span><span class="n">pct</span><span class="p">(</span><span class="n">either</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"With neither:     </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="o">~</span><span class="n">either</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> mothers = </span><span class="si">{</span><span class="n">pct</span><span class="p">((</span><span class="o">~</span><span class="n">either</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8067,27 +8065,26 @@ hemorrhage    290 of 5,000 deliveries = 5.80%
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>infection     no  yes  Total
+<pre>Hemorrhage (rows) by infection (columns):
+infection     no  yes  Total
 hemorrhage                  
 no          4599  111   4710
 yes          271   19    290
 Total       4870  130   5000 
 
-Hemorrhage:                290
-Infection:                 130
-Adding the two:            420   (the 19 mothers with both are counted twice)
-Both:                       19
-Hemorrhage or infection:   401   = 290 + 130 - 19
+290 mothers had a hemorrhage and 130 had an infection.
+Adding the two gives 420, but the 19 mothers with both were counted twice.
+Hemorrhage or infection: 290 + 130 - 19 = 401 mothers.
 
-Counted directly:  401 of 5,000 = 8.02%
-With neither:      4,599 of 5,000 = 91.98%
+Counted directly: 401 of 5,000 mothers = 8.02%.
+With neither:     4,599 of 5,000 mothers = 91.98%.
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c34aad7a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1662ae3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8097,7 +8094,7 @@ With neither:      4,599 of 5,000 = 91.98%
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ac586926">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=688afd43">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8111,13 +8108,13 @@ With neither:      4,599 of 5,000 = 91.98%
 <span class="c1"># 2. Within each group, count the infections and divide by the size of that group</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">infected</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">group</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection among </span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;9</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">infected</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">size</span><span class="si">:</span><span class="s2">&gt;5,</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">infected</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">size</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection among </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> deliveries: </span><span class="si">{</span><span class="n">infected</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">infected</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pct</span><span class="p">(</span><span class="n">infected</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 
 <span class="c1"># 3. The same 87 infected cesareans over ALL deliveries (a different denominator)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cesarean and infection, among all deliveries: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Cesarean and infection, among all deliveries: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 4. Infection over all deliveries, whatever the delivery type</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection, among all deliveries:              </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection, among all deliveries:               </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8130,17 +8127,18 @@ With neither:      4,599 of 5,000 = 91.98%
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Infection among cesarean   87 of 1,313 = 0.0663
-Infection among vaginal    43 of 3,687 = 0.0117
+<pre>Infection among cesarean deliveries: 87 of 1,313 = 0.0663 (6.63%)
+Infection among vaginal deliveries: 43 of 3,687 = 0.0117 (1.17%)
+
 Cesarean and infection, among all deliveries: 87 of 5,000 = 0.0174
-Infection, among all deliveries:              130 of 5,000 = 0.0260
+Infection, among all deliveries:               130 of 5,000 = 0.0260
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5efb58d1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ef3970a2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8150,7 +8148,7 @@ Infection, among all deliveries:              130 of 5,000 = 0.0260
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d941e807">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5a325d32">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8160,19 +8158,19 @@ Infection, among all deliveries:              130 of 5,000 = 0.0260
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. If hemorrhage and infection were independent, P(H and I) would equal P(H) x P(I)</span>
 <span class="n">expected</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Expected under independence: </span><span class="si">{</span><span class="n">H</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">expected</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Expected if independent: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. What the register shows</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Observed, both together:     </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="p">(</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Observed, both together: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 3. Infection within the mothers with and without hemorrhage</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection among hemorrhage:    </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection among no hemorrhage: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="o">~</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="o">~</span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection among mothers with hemorrhage:    </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection among mothers without hemorrhage: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="o">~</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="o">~</span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 4. Multiplying while keeping the conditions: cesarean, then hemorrhage, then infection</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cesareans: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> | with hemorrhage: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> | with infection too: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="si">}</span><span class="s2"> cesareans, </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> had a hemorrhage, and </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of those also had an infection."</span><span class="p">)</span>
 <span class="n">chain</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">H</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">I</span><span class="p">[</span><span class="n">C</span> <span class="o">&amp;</span> <span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P(C) x P(H|C) x P(I|C and H) = </span><span class="si">{</span><span class="n">chain</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">   (direct count: </span><span class="si">{</span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P(C) x P(H|C) x P(I|C and H) = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">chain</span><span class="p">)</span><span class="si">}</span><span class="s2">, the same as the direct count (</span><span class="si">{</span><span class="n">dec</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">)."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8185,20 +8183,21 @@ Infection, among all deliveries:              130 of 5,000 = 0.0260
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Expected under independence: 0.0580 x 0.0260 = 0.001508
-Observed, both together:     19 of 5,000 = 0.0038
-Infection among hemorrhage:    19 of 290 = 0.0655
-Infection among no hemorrhage: 111 of 4,710 = 0.0236
+<pre>Expected if independent: 0.0580 x 0.0260 = 0.001508
+Observed, both together: 19 of 5,000 = 0.0038
 
-Cesareans: 1,313 | with hemorrhage: 95 | with infection too: 14
-P(C) x P(H|C) x P(I|C and H) = 0.0028   (direct count: 0.0028)
+Infection among mothers with hemorrhage:    19 of 290 = 0.0655
+Infection among mothers without hemorrhage: 111 of 4,710 = 0.0236
+
+Of 1,313 cesareans, 95 had a hemorrhage, and 14 of those also had an infection.
+P(C) x P(H|C) x P(I|C and H) = 0.0028, the same as the direct count (0.0028).
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f44a6ec5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6dbd7ec7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8208,7 +8207,7 @@ P(C) x P(H|C) x P(I|C and H) = 0.0028   (direct count: 0.0028)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ecc26cf0">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2adb6cb1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8217,18 +8216,19 @@ P(C) x P(H|C) x P(I|C and H) = 0.0028   (direct count: 0.0028)
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. The table: rows are the delivery type, columns are infection</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Delivery type (rows) by infection (columns):"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"cesarean"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"infection"</span><span class="p">],</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">margins_name</span><span class="o">=</span><span class="s2">"Total"</span><span class="p">),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. Rebuild the overall infection fraction from the two groups</span>
 <span class="n">p_i</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="o">~</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P(I) = P(I|C) P(C) + P(I|not C) P(not C) = </span><span class="si">{</span><span class="n">p_i</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P(I) = P(I|C) P(C) + P(I|not C) P(not C) = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 3. Reverse the condition (Bayes): from infection among cesareans to cesareans among infections</span>
 <span class="n">p_c_given_i</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="n">p_i</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P(C|I) = P(I|C) P(C) / P(I) = </span><span class="si">{</span><span class="n">p_c_given_i</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P(C|I) = P(I|C) P(C) / P(I) = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_c_given_i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 4. Check by counting directly among the infected mothers</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Counting directly: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">C</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">  (</span><span class="si">{</span><span class="n">C</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Counting directly: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of the </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> infections followed a cesarean = </span><span class="si">{</span><span class="n">pct</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8241,7 +8241,8 @@ P(C) x P(H|C) x P(I|C and H) = 0.0028   (direct count: 0.0028)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>infection    no  yes  Total
+<pre>Delivery type (rows) by infection (columns):
+infection    no  yes  Total
 cesarean                   
 no         3644   43   3687
 yes        1226   87   1313
@@ -8249,14 +8250,15 @@ Total      4870  130   5000
 
 P(I) = P(I|C) P(C) + P(I|not C) P(not C) = 0.0260
 P(C|I) = P(I|C) P(C) / P(I) = 0.6692
-Counting directly: 87 of 130 = 0.6692  (66.9%)
+
+Counting directly: 87 of the 130 infections followed a cesarean = 66.92%.
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3fb3297f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=df742349">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8266,7 +8268,7 @@ Counting directly: 87 of 130 = 0.6692  (66.9%)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e17d97a3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=91a9dbf1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8280,20 +8282,20 @@ Counting directly: 87 of 130 = 0.6692  (66.9%)
 
 <span class="c1"># 1. In how many ways can 20 charts be chosen? (order does not matter)</span>
 <span class="n">sets</span> <span class="o">=</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Sets of 20 charts: </span><span class="si">{</span><span class="n">sets</span><span class="si">}</span><span class="s2">  (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sets</span><span class="p">))</span><span class="si">}</span><span class="s2"> digits)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"There are </span><span class="si">{</span><span class="n">sets</span><span class="si">}</span><span class="s2"> different sets of 20 charts (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sets</span><span class="p">))</span><span class="si">}</span><span class="s2"> digits)."</span><span class="p">)</span>
 
 <span class="c1"># 2. Orders of the 20 selected charts, and of the first two slots</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Orders of the 20 charts: </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">   First two slots: </span><span class="si">{</span><span class="n">perm</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The 20 chosen charts can be put in </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="si">}</span><span class="s2"> orders; the first two slots, in </span><span class="si">{</span><span class="n">perm</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 
 <span class="c1"># 3. Chance of at least one infection = 1 - chance of none (all 20 from the N - K without infection)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">p_at_least_one</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">K</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"At least one infection in 20 charts: </span><span class="si">{</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Chance that 20 charts include at least one infection: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pct</span><span class="p">(</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 
 <span class="c1"># 4. Smallest sample with at least 90% (integer test: no infection is at most 1/10 of all sets)</span>
 <span class="n">m</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">K</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> charts: </span><span class="si">{</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"With </span><span class="si">{</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> charts the chance is </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">; with </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> charts it is </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="n">m</span><span class="p">),</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"So </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> is the smallest sample with at least 90%."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8306,18 +8308,19 @@ Counting directly: 87 of 130 = 0.6692  (66.9%)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Sets of 20 charts: 37735558620382470911680923426535607627307325009655406000  (56 digits)
-Orders of the 20 charts: 2,432,902,008,176,640,000   First two slots: 380
-At least one infection in 20 charts: 0.4102
-86 charts: 0.898259
-87 charts: 0.900950
+<pre>There are 37735558620382470911680923426535607627307325009655406000 different sets of 20 charts (56 digits).
+The 20 chosen charts can be put in 2,432,902,008,176,640,000 orders; the first two slots, in 380.
+
+Chance that 20 charts include at least one infection: 0.4102 (41.02%)
+With 86 charts the chance is 0.898259; with 87 charts it is 0.900950.
+So 87 is the smallest sample with at least 90%.
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f49aa3e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5778f653">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8328,7 +8331,7 @@ At least one infection in 20 charts: 0.4102
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=88d873b0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2f76d688">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8338,7 +8341,7 @@ At least one infection in 20 charts: 0.4102
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b350ed26">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2132c375">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8349,10 +8352,10 @@ At least one infection in 20 charts: 0.4102
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
 
 <span class="c1"># 1. The sample space: one of the 5,000 identifiers</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">"delivery_id"</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> records, </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'delivery_id'</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span><span class="si">}</span><span class="s2"> distinct identifiers."</span><span class="p">)</span>
 
 <span class="c1"># 2. The eight descriptions (C, H, I), 1 = yes and 0 = no</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">bits</span><span class="p">))</span> <span class="k">for</span> <span class="n">bits</span> <span class="ow">in</span> <span class="n">product</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The eight descriptions:"</span><span class="p">,</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">bits</span><span class="p">))</span> <span class="k">for</span> <span class="n">bits</span> <span class="ow">in</span> <span class="n">product</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -8365,15 +8368,15 @@ At least one infection in 20 charts: 0.4102
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>5000 5000
-000 001 010 011 100 101 110 111
+<pre>5,000 records, 5,000 distinct identifiers.
+The eight descriptions: 000 001 010 011 100 101 110 111
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94ca33b1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=57066228">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8383,7 +8386,7 @@ At least one infection in 20 charts: 0.4102
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0d7fc43d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dd66729c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8393,11 +8396,11 @@ At least one infection in 20 charts: 0.4102
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Fraction of cesareans among the first k records</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">C</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"First </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;5</span><span class="si">}</span><span class="s2"> records: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. Reverse the register order: first 100 records, and all 5,000</span>
 <span class="n">reverse</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">reverse</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">reverse</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Reversed order: first 100 records </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">reverse</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">; all </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2"> records </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">reverse</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8410,20 +8413,21 @@ At least one infection in 20 charts: 0.4102
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>10 0.5000
-50 0.3800
-100 0.2700
-500 0.2460
-1000 0.2460
-5000 0.2626
-0.2500 0.2626
+<pre>First    10 records: 0.5000
+First    50 records: 0.3800
+First   100 records: 0.2700
+First   500 records: 0.2460
+First 1,000 records: 0.2460
+First 5,000 records: 0.2626
+
+Reversed order: first 100 records 0.2500; all 5,000 records 0.2626
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc828886">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=22ef51d9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8433,7 +8437,7 @@ At least one infection in 20 charts: 0.4102
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ea02e9ad">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7338aeb4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8442,13 +8446,14 @@ At least one infection in 20 charts: 0.4102
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. The four groups: hemorrhage only, infection only, both, neither</span>
-<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">(</span><span class="n">H</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">I</span><span class="p">,</span> <span class="o">~</span><span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">,</span> <span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">,</span> <span class="o">~</span><span class="p">(</span><span class="n">H</span> <span class="o">|</span> <span class="n">I</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">group</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"hemorrhage only"</span><span class="p">,</span> <span class="s2">"infection only"</span><span class="p">,</span> <span class="s2">"both"</span><span class="p">,</span> <span class="s2">"neither"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="p">(</span><span class="n">H</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">I</span><span class="p">,</span> <span class="o">~</span><span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">,</span> <span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">,</span> <span class="o">~</span><span class="p">(</span><span class="n">H</span> <span class="o">|</span> <span class="n">I</span><span class="p">))):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;16</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="si">:</span><span class="s2">&gt;5</span><span class="si">}</span><span class="s2"> mothers = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. Addition rule, and the same count done directly</span>
 <span class="n">union</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">I</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="p">(</span><span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">union</span><span class="p">),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">union</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span> <span class="o">|</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Addition rule: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">union</span><span class="p">)</span><span class="si">}</span><span class="s2"> mothers with hemorrhage or infection (</span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">union</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Direct count:  </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> mothers; probability of neither = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8461,19 +8466,20 @@ At least one infection in 20 charts: 0.4102
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>271 0.0542
-111 0.0222
-19 0.0038
-4599 0.9198
-401 0.0802
-401 0.9198
+<pre>hemorrhage only    271 mothers = 0.0542
+infection only     111 mothers = 0.0222
+both                19 mothers = 0.0038
+neither          4,599 mothers = 0.9198
+
+Addition rule: 401 mothers with hemorrhage or infection (0.0802)
+Direct count:  401 mothers; probability of neither = 0.9198
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=013b1da3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8ef33879">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8483,7 +8489,7 @@ At least one infection in 20 charts: 0.4102
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=785138ea">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d3ba87a0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8491,12 +8497,16 @@ At least one infection in 20 charts: 0.4102
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. The five fractions, in the order (a) to (e)</span>
-<span class="n">values</span> <span class="o">=</span> <span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="p">(</span><span class="n">C</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">C</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">H</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. The five fractions, each with its meaning and denominator</span>
+<span class="n">fractions</span> <span class="o">=</span> <span class="p">((</span><span class="s2">"(a) infection among cesareans"</span><span class="p">,</span> <span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
+             <span class="p">(</span><span class="s2">"(b) cesarean and infection, among all"</span><span class="p">,</span> <span class="p">(</span><span class="n">C</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
+             <span class="p">(</span><span class="s2">"(c) infection, among all"</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
+             <span class="p">(</span><span class="s2">"(d) cesarean among infections"</span><span class="p">,</span> <span class="n">C</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
+             <span class="p">(</span><span class="s2">"(e) hemorrhage among cesareans"</span><span class="p">,</span> <span class="n">H</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 
 <span class="c1"># 2. Print each one</span>
-<span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s2">"abcde"</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">fractions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8509,18 +8519,18 @@ At least one infection in 20 charts: 0.4102
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>a 0.0663
-b 0.0174
-c 0.0260
-d 0.6692
-e 0.0724
+<pre>(a) infection among cesareans            0.0663
+(b) cesarean and infection, among all    0.0174
+(c) infection, among all                 0.0260
+(d) cesarean among infections            0.6692
+(e) hemorrhage among cesareans           0.0724
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=35d33424">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=386bd541">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8530,7 +8540,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ac6dae10">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7e2dad4c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8539,12 +8549,11 @@ e 0.0724
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Infection in each delivery type, and the ratio of the two proportions</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection: cesarean </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2"> versus vaginal </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">; ratio </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. Hemorrhage in each delivery type: count, group size, proportion</span>
-<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="o">~</span><span class="n">C</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span> <span class="o">&amp;</span> <span class="n">group</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">H</span><span class="p">[</span><span class="n">group</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">"cesarean"</span><span class="p">,</span> <span class="n">C</span><span class="p">),</span> <span class="p">(</span><span class="s2">"vaginal"</span><span class="p">,</span> <span class="o">~</span><span class="n">C</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Hemorrhage, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">group</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">group</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8557,17 +8566,16 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.0663 0.0117
-5.6815
-95 1313 0.0724
-195 3687 0.0529
+<pre>Infection: cesarean 0.0663 versus vaginal 0.0117; ratio 5.6815
+Hemorrhage, cesarean: 95 of 1,313 = 0.0724
+Hemorrhage, vaginal: 195 of 3,687 = 0.0529
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f027dae">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d0d3831">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8577,7 +8585,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0870ecf2">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6fdffbcd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8586,11 +8594,11 @@ e 0.0724
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Product of the marginals versus the observed joint fraction</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">H</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="p">(</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Product of the marginals: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">; observed joint fraction: </span><span class="si">{</span><span class="n">dec</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. Infection with and without hemorrhage, and the number with both</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Infection with hemorrhage: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">; without hemorrhage: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mothers with both: </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8603,16 +8611,16 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.001508 0.0038
-0.0655 0.0236
-19
+<pre>Product of the marginals: 0.001508; observed joint fraction: 0.0038
+Infection with hemorrhage: 0.0655; without hemorrhage: 0.0236
+Mothers with both: 19
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8877bf38">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9b6cd6b8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8622,7 +8630,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=65aa2695">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b35c3187">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8635,8 +8643,8 @@ e 0.0724
 <span class="n">second</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">I</span><span class="p">[</span><span class="n">C</span> <span class="o">&amp;</span> <span class="n">H</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="c1"># 2. The counts along the way, and the three results (they must agree)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">((</span><span class="n">C</span> <span class="o">&amp;</span> <span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="nb">int</span><span class="p">((</span><span class="n">C</span> <span class="o">&amp;</span> <span class="n">H</span> <span class="o">&amp;</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">first</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">second</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Counts: </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="si">}</span><span class="s2"> cesareans, </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> hemorrhages, </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> with both, </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> with all three."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Route C, H, I: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">first</span><span class="p">)</span><span class="si">}</span><span class="s2"> | route H, C, I: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">second</span><span class="p">)</span><span class="si">}</span><span class="s2"> | direct count: </span><span class="si">{</span><span class="n">dec</span><span class="p">((</span><span class="n">C</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8649,15 +8657,15 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>1313 290 95 14
-0.0028 0.0028 0.0028
+<pre>Counts: 1,313 cesareans, 290 hemorrhages, 95 with both, 14 with all three.
+Route C, H, I: 0.0028 | route H, C, I: 0.0028 | direct count: 0.0028
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f5915b36">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d5595d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8667,7 +8675,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6c17e39e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b2237928">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8677,12 +8685,11 @@ e 0.0724
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Total probability of infection from the two delivery types</span>
 <span class="n">p_i</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="n">I</span><span class="p">[</span><span class="o">~</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="o">~</span><span class="n">C</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">p_i</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total probability of infection: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. Bayes: cesareans among the infected, and vaginal deliveries among the infected</span>
 <span class="n">bayes</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="n">p_i</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">bayes</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">C</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="p">(</span><span class="o">~</span><span class="n">C</span><span class="p">)[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Among the infected: cesarean </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">bayes</span><span class="p">)</span><span class="si">}</span><span class="s2"> (direct count </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">), vaginal </span><span class="si">{</span><span class="n">dec</span><span class="p">((</span><span class="o">~</span><span class="n">C</span><span class="p">)[</span><span class="n">I</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8695,16 +8702,15 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.0260
-0.6692 0.6692
-0.3308
+<pre>Total probability of infection: 0.0260
+Among the infected: cesarean 0.6692 (direct count 0.6692), vaginal 0.3308
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb2672ef">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f863db8a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8714,7 +8720,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=220e07c2">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b932f018">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8725,11 +8731,11 @@ e 0.0724
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">perm</span>
 
 <span class="c1"># 1. Orders of 20 charts, and ordered first two slots</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">perm</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"20! = </span><span class="si">{</span><span class="n">num</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="si">}</span><span class="s2"> orders; first two slots: </span><span class="si">{</span><span class="n">perm</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> ordered choices"</span><span class="p">)</span>
 
 <span class="c1"># 2. Chance that a given chart is first, and that two given charts are first and second</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A given chart is first with chance </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Two given charts are first and second with chance </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8742,16 +8748,16 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2432902008176640000 380
-0.0500
-0.002632
+<pre>20! = 2,432,902,008,176,640,000 orders; first two slots: 380 ordered choices
+A given chart is first with chance 0.0500
+Two given charts are first and second with chance 0.002632
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe5ee71b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e413f86c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8761,7 +8767,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b6262834">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9195adc4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8780,7 +8786,7 @@ e 0.0724
 <span class="c1"># 2. Smallest sample with at least 90%, and its neighbour below</span>
 <span class="n">m</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">K</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">size</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2"> charts: chance of at least one infection = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_at_least_one</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8793,16 +8799,16 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>20 0.410156
-86 0.898259
-87 0.900950
+<pre> 20 charts: chance of at least one infection = 0.410156
+ 86 charts: chance of at least one infection = 0.898259
+ 87 charts: chance of at least one infection = 0.900950
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2539039f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=161ff729">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8812,7 +8818,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9061ad3f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=872e5802">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8826,8 +8832,8 @@ e 0.0724
 <span class="c1"># 2. Smallest and largest possible joint probability, and P(H or I) if independent</span>
 <span class="n">lower</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">p_h</span><span class="p">,</span> <span class="n">p_i</span><span class="p">)</span>
 <span class="n">upper</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p_h</span> <span class="o">+</span> <span class="n">p_i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">lower</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">upper</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">p_h</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p_i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p_h</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The joint probability must lie between </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"If the events were independent, P(H or I) = </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">p_h</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p_i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p_h</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_i</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8840,15 +8846,15 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.0300 0.0500
-0.0494
+<pre>The joint probability must lie between 0.0300 and 0.0500.
+If the events were independent, P(H or I) = 0.0494.
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f689b6a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa6a93be">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8858,7 +8864,7 @@ e 0.0724
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0b3c7e73">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85ec7723">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8873,10 +8879,10 @@ e 0.0724
 <span class="c1"># 1. Chance of at least one infection in 20 draws, with and without returning the chart</span>
 <span class="n">with_replacement</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="n">N</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">**</span> <span class="mi">20</span>
 <span class="n">without_replacement</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">K</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="o">/</span> <span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">with_replacement</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">without_replacement</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Returning each chart: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">with_replacement</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2"> | not returning: </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">without_replacement</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 2. The difference between the two procedures</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">without_replacement</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">with_replacement</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The difference is only </span><span class="si">{</span><span class="n">dec</span><span class="p">(</span><span class="n">without_replacement</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">with_replacement</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8889,15 +8895,15 @@ e 0.0724
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.409555 0.410156
-0.000600
+<pre>Returning each chart: 0.409555 | not returning: 0.410156
+The difference is only 0.000600.
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a84da7b4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f303fbd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
