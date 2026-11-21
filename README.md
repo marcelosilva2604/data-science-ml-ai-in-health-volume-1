@@ -16,6 +16,7 @@ All data are **synthetic**; no real patients appear. Each chapter is self-contai
 | 2. Populations, Samples, and Data | Hospital with 500 beds: audit of a sample of the January discharges to home | `chapters/ch02/ch02_populations_samples_data_en.ipynb` | `docs/ch02_en.html` |
 | 3. Variables and Measurement Scales | Adult emergency department: triage log of 200 visits | `chapters/ch03/ch03_variables_scales_en.ipynb` | `docs/ch03_en.html` |
 | 4. Describing One Variable | Cohort of 300 adults admitted with pneumonia: describing the sample | `chapters/ch04/ch04_describing_one_variable_en.ipynb` | `docs/ch04_en.html` |
+| 5. Measures of Frequency in Health | Municipality of 200,000 inhabitants: the annual report of the health department | `chapters/ch05/ch05_measures_of_frequency_en.ipynb` | `docs/ch05_en.html` |
 | 10. Experimental and Quasi-Experimental Designs in Health | Hypertension service with ten clinics: single pill versus separate tablets | `chapters/ch10/ch10_experimental_designs_en.ipynb` | `docs/ch10_en.html` |
 | 11. Probability: The Language of Uncertainty | Infection-control committee of a public maternity unit, 5,000 deliveries | `chapters/ch11/ch11_probability_en.ipynb` | `docs/ch11_en.html` |
 | 13. Sampling and Estimation | Health department surveys schoolchildren for oral health: a list of 14,299 children in 48 schools | `chapters/ch13/ch13_sampling_estimation_en.ipynb` | `docs/ch13_en.html` |
