@@ -19,6 +19,8 @@ CHAPTERS = [
      "Case: an author describes a cohort of 300 adults admitted with community-acquired pneumonia for the first table of a manuscript.", "chapters/ch04/ch04_describing_one_variable_en.ipynb"),
     ("ch05_en", "en", "Chapter 5", "Measures of Frequency in Health",
      "Case: the health department of a municipality of 200,000 inhabitants checks the headline numbers of its annual report.", "chapters/ch05/ch05_measures_of_frequency_en.ipynb"),
+    ("ch06_en", "en", "Chapter 6", "Describing Two Variables",
+     "Case: the medical director of an emergency department studies one month of the triage log: arrival route, triage level, admission, and waiting.", "chapters/ch06/ch06_describing_two_variables_en.ipynb"),
     ("ch10_en", "en", "Chapter 10", "Experimental and Quasi-Experimental Designs in Health",
      "Case: a hypertension service with ten clinics decides whether to offer a single pill instead of separate tablets.", "chapters/ch10/ch10_experimental_designs_en.ipynb"),
     ("ch11_en", "en", "Chapter 11", "Probability: The Language of Uncertainty",
