@@ -10,6 +10,7 @@ import sys
 import nbformat as nbf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ch11_solutions import SOL
 from ch11_cells import cells as all_cells, PLOTCELL
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +24,7 @@ HEAD = {
 
 > **This notebook accompanies the book chapter; it does not reproduce it.** Definitions, derivations, and explanations are in the book. Here you run the calculations on the case and check the numbers. All data are **synthetic**, and the values are for teaching purposes only; they have no correlation with the real world.
 
-**Part A** follows the chapter's case, the delivery register of a public maternity unit, through the committee's six questions. **Part B** gives the code and result of each of the ten chapter exercises (statements are in the book). Run the cells in order.
+**Part A** follows the chapter's case, the delivery register of a public maternity unit, through the committee's six questions. **Part B** gives the written solution of every chapter exercise (statements are in the book) and, for the exercises whose solution needs a calculation, its code and result. Run the cells in order.
 
 ## Part A. The case
 
@@ -33,7 +34,7 @@ HEAD = {
 
 > **Este caderno acompanha o capítulo do livro; não o reproduz.** Definições, deduções e explicações estão no livro. Aqui você executa os cálculos do caso e confere os números. Todos os dados são **sintéticos** e os valores têm apenas finalidade didática; não possuem correlação com o mundo real.
 
-A **Parte A** percorre o caso do capítulo, o registro de partos de uma maternidade pública, pelas seis perguntas do comitê. A **Parte B** traz o código e o resultado de cada um dos dez exercícios do capítulo (os enunciados estão no livro). Execute as células em ordem. As saídas do código usam ponto decimal.
+A **Parte A** percorre o caso do capítulo, o registro de partos de uma maternidade pública, pelas seis perguntas do comitê. A **Parte B** traz a solução escrita de cada exercício do capítulo (os enunciados estão no livro) e, nos exercícios cuja solução exige cálculo, o código e o resultado. Execute as células em ordem. As saídas do código usam ponto decimal.
 
 ## Parte A. O caso
 
@@ -72,9 +73,13 @@ def build(lang):
         else:
             code(PLOTCELL[lang])
     md("## Part B. Exercise solutions" if lang == "en" else "## Parte B. Soluções dos exercícios")
-    for k, (title, block) in enumerate(exs, start=1):
+    code_of = {k: block for k, (title, block) in enumerate(exs, start=1)}
+    for k in sorted(SOL[lang]):
+        title, text = SOL[lang][k]
         md(f"### 11.9 {'Exercise' if lang == 'en' else 'Exercício'} {k}. {title}")
-        code(block)
+        md(text)
+        if k in code_of:
+            code(code_of[k])
     md(FOOT[lang])
     nb = nbf.v4.new_notebook()
     nb.cells = cells
