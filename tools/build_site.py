@@ -21,6 +21,8 @@ CHAPTERS = [
      "Case: the health department of a municipality of 200,000 inhabitants checks the headline numbers of its annual report.", "chapters/ch05/ch05_measures_of_frequency_en.ipynb"),
     ("ch06_en", "en", "Chapter 6", "Describing Two Variables",
      "Case: the medical director of an emergency department studies one month of the triage log: arrival route, triage level, admission, and waiting.", "chapters/ch06/ch06_describing_two_variables_en.ipynb"),
+    ("ch07_en", "en", "Chapter 7", "Measures of Association and Impact in Health",
+     "Case: a research fellow checks the draft of an abstract from a register of 2,400 elective-surgery patients: diabetes, smoking, a decolonization bundle, and infection.", "chapters/ch07/ch07_association_and_impact_en.ipynb"),
     ("ch10_en", "en", "Chapter 10", "Experimental and Quasi-Experimental Designs in Health",
      "Case: a hypertension service with ten clinics decides whether to offer a single pill instead of separate tablets.", "chapters/ch10/ch10_experimental_designs_en.ipynb"),
     ("ch11_en", "en", "Chapter 11", "Probability: The Language of Uncertainty",
