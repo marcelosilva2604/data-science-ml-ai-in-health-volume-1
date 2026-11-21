@@ -17,6 +17,8 @@ CHAPTERS = [
      "Case: the infection-control committee of a public maternity unit reviews a register of 5,000 deliveries.", "chapters/ch11/ch11_probability_en.ipynb"),
     ("ch11_pt", "pt", "Capítulo 11", "Probabilidade: a linguagem da incerteza",
      "Caso: o comitê de controle de infecção de uma maternidade pública revisa um registro de 5.000 partos.", "chapters/ch11/ch11_probabilidade_pt.ipynb"),
+    ("ch13_en", "en", "Chapter 13", "Sampling and Estimation",
+     "Case: a health department draws a sample of schoolchildren for an oral-health survey, from a list of 14,299 children in 48 schools.", "chapters/ch13/ch13_sampling_estimation_en.ipynb"),
 ]
 PARTS = {"en": ("Part A. The case", "Part B. Exercise solutions", "#Part-A.-The-case", "#Part-B.-Exercise-solutions"),
          "pt": ("Parte A. O caso", "Parte B. Soluções dos exercícios", "#Parte-A.-O-caso", "#Parte-B.-Solu%C3%A7%C3%B5es-dos-exerc%C3%ADcios")}
