@@ -13,6 +13,8 @@ DOCS = ROOT / "docs"
 CHAPTERS = [
     ("ch02_en", "en", "Chapter 2", "Populations, Samples, and Data",
      "Case: the manager of a 500-bed hospital audits a sample of the January discharges to home to see how often discharge is delayed.", "chapters/ch02/ch02_populations_samples_data_en.ipynb"),
+    ("ch03_en", "en", "Chapter 3", "Variables and Measurement Scales",
+     "Case: an attending physician starts the morning shift of an adult emergency department and reads a triage log of 200 visits.", "chapters/ch03/ch03_variables_scales_en.ipynb"),
     ("ch10_en", "en", "Chapter 10", "Experimental and Quasi-Experimental Designs in Health",
      "Case: a hypertension service with ten clinics decides whether to offer a single pill instead of separate tablets.", "chapters/ch10/ch10_experimental_designs_en.ipynb"),
     ("ch11_en", "en", "Chapter 11", "Probability: The Language of Uncertainty",

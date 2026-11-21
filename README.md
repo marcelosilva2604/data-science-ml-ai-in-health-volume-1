@@ -14,6 +14,7 @@ All data are **synthetic**; no real patients appear. Each chapter is self-contai
 | Chapter | Case | Notebooks | Pages |
 |---|---|---|---|
 | 2. Populations, Samples, and Data | Hospital with 500 beds: audit of a sample of the January discharges to home | `chapters/ch02/ch02_populations_samples_data_en.ipynb` | `docs/ch02_en.html` |
+| 3. Variables and Measurement Scales | Adult emergency department: triage log of 200 visits | `chapters/ch03/ch03_variables_scales_en.ipynb` | `docs/ch03_en.html` |
 | 10. Experimental and Quasi-Experimental Designs in Health | Hypertension service with ten clinics: single pill versus separate tablets | `chapters/ch10/ch10_experimental_designs_en.ipynb` | `docs/ch10_en.html` |
 | 11. Probability: The Language of Uncertainty | Infection-control committee of a public maternity unit, 5,000 deliveries | `chapters/ch11/ch11_probability_en.ipynb` | `docs/ch11_en.html` |
 | 13. Sampling and Estimation | Health department surveys schoolchildren for oral health: a list of 14,299 children in 48 schools | `chapters/ch13/ch13_sampling_estimation_en.ipynb` | `docs/ch13_en.html` |
