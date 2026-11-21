@@ -20,6 +20,7 @@ All data are **synthetic**; no real patients appear. Each chapter is self-contai
 | 6. Describing Two Variables | Emergency department: one month of the triage log, 1,263 visits | `chapters/ch06/ch06_describing_two_variables_en.ipynb` | `docs/ch06_en.html` |
 | 7. Measures of Association and Impact in Health | Register of 2,400 elective-surgery patients: diabetes, smoking, a decolonization bundle, infection | `chapters/ch07/ch07_association_and_impact_en.ipynb` | `docs/ch07_en.html` |
 | 8. Observational Study Design in Health | Network of twelve hospitals: 24,000 operations, a preoperative bundle, and surgical-site infection | `chapters/ch08/ch08_observational_designs_en.ipynb` | `docs/ch08_en.html` |
+| 9. Evaluating Diagnostic Tests and Screening | Twelve-hospital network: a rapid wound assay for surgical-site infection, 1,200 follow-up visits | `chapters/ch09/ch09_diagnostic_tests_en.ipynb` | `docs/ch09_en.html` |
 | 10. Experimental and Quasi-Experimental Designs in Health | Hypertension service with ten clinics: single pill versus separate tablets | `chapters/ch10/ch10_experimental_designs_en.ipynb` | `docs/ch10_en.html` |
 | 11. Probability: The Language of Uncertainty | Infection-control committee of a public maternity unit, 5,000 deliveries | `chapters/ch11/ch11_probability_en.ipynb` | `docs/ch11_en.html` |
 | 13. Sampling and Estimation | Health department surveys schoolchildren for oral health: a list of 14,299 children in 48 schools | `chapters/ch13/ch13_sampling_estimation_en.ipynb` | `docs/ch13_en.html` |

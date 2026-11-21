@@ -25,6 +25,8 @@ CHAPTERS = [
      "Case: a research fellow checks the draft of an abstract from a register of 2,400 elective-surgery patients: diabetes, smoking, a decolonization bundle, and infection.", "chapters/ch07/ch07_association_and_impact_en.ipynb"),
     ("ch08_en", "en", "Chapter 8", "Observational Study Design in Health",
      "Case: the quality directorate of a network of twelve hospitals asks which study would show that a preoperative bundle lowers surgical-site infection.", "chapters/ch08/ch08_observational_designs_en.ipynb"),
+    ("ch09_en", "en", "Chapter 9", "Evaluating Diagnostic Tests and Screening",
+     "Case: a twelve-hospital network evaluates a rapid wound assay for surgical-site infection, from sensitivity and ROC curves to screening and thresholds.", "chapters/ch09/ch09_diagnostic_tests_en.ipynb"),
     ("ch10_en", "en", "Chapter 10", "Experimental and Quasi-Experimental Designs in Health",
      "Case: a hypertension service with ten clinics decides whether to offer a single pill instead of separate tablets.", "chapters/ch10/ch10_experimental_designs_en.ipynb"),
     ("ch11_en", "en", "Chapter 11", "Probability: The Language of Uncertainty",
