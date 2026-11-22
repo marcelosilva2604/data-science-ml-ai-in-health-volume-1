@@ -31,6 +31,8 @@ CHAPTERS = [
      "Case: a hypertension service with ten clinics decides whether to offer a single pill instead of separate tablets.", "chapters/ch10/ch10_experimental_designs_en.ipynb"),
     ("ch11_en", "en", "Chapter 11", "Probability: The Language of Uncertainty",
      "Case: the infection-control committee of a public maternity unit reviews a register of 5,000 deliveries.", "chapters/ch11/ch11_probability_en.ipynb"),
+    ("ch12_en", "en", "Chapter 12", "Random Variables and Distributions",
+     "Case: the director of a city's emergency call center studies 90 days of calls: counts per hour, ambulances, and waits.", "chapters/ch12/ch12_random_variables_en.ipynb"),
     ("ch11_pt", "pt", "Capítulo 11", "Probabilidade: a linguagem da incerteza",
      "Caso: o comitê de controle de infecção de uma maternidade pública revisa um registro de 5.000 partos.", "chapters/ch11/ch11_probabilidade_pt.ipynb"),
     ("ch13_en", "en", "Chapter 13", "Sampling and Estimation",

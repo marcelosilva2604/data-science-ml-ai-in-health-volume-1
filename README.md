@@ -23,6 +23,7 @@ All data are **synthetic**; no real patients appear. Each chapter is self-contai
 | 9. Evaluating Diagnostic Tests and Screening | Twelve-hospital network: a rapid wound assay for surgical-site infection, 1,200 follow-up visits | `chapters/ch09/ch09_diagnostic_tests_en.ipynb` | `docs/ch09_en.html` |
 | 10. Experimental and Quasi-Experimental Designs in Health | Hypertension service with ten clinics: single pill versus separate tablets | `chapters/ch10/ch10_experimental_designs_en.ipynb` | `docs/ch10_en.html` |
 | 11. Probability: The Language of Uncertainty | Infection-control committee of a public maternity unit, 5,000 deliveries | `chapters/ch11/ch11_probability_en.ipynb` | `docs/ch11_en.html` |
+| 12. Random Variables and Distributions | City emergency call center: 90 days of calls, counts per hour, ambulances, and waits | `chapters/ch12/ch12_random_variables_en.ipynb` | `docs/ch12_en.html` |
 | 13. Sampling and Estimation | Health department surveys schoolchildren for oral health: a list of 14,299 children in 48 schools | `chapters/ch13/ch13_sampling_estimation_en.ipynb` | `docs/ch13_en.html` |
 | 14. Hypothesis Testing: Logic and the Standard Tests | Quality committee of a two-hospital surgery department: 800 operated patients, targets for stay and readmission | `chapters/ch14/ch14_hypothesis_testing_en.ipynb` | `docs/ch14_en.html` |
 
