@@ -286,13 +286,6 @@ for size in (316, 320):
     z_counts = (counts / size - 0.10) / sqrt(0.10 * 0.90 / size)
     rejected = np.abs(z_counts) > za
     print("Exact power with", size, "patients:", round(100 * stats.binom.pmf(counts, size, 0.15)[rejected].sum(), 1), "%")
-
-# 4. Power of the z test with the 800 patients if the true rate were the observed one
-se_null = sqrt(0.10 * 0.90 / n)
-se_alt = sqrt(p_hat * (1 - p_hat) / n)
-gap_rate = abs(p_hat - 0.10)
-power_rate = stats.norm.sf((za * se_null - gap_rate) / se_alt) + stats.norm.cdf((-za * se_null - gap_rate) / se_alt)
-print("Power with", n, "patients for", round(100 * p_hat, 1), "% against 10%:", round(100 * power_rate, 1), "%")
 '''
 
 C_TWO = '''# 1. Length of stay in each hospital
@@ -427,7 +420,6 @@ numerator = (scores * (events - sizes * p_bar)).sum()
 spread = (sizes * scores ** 2).sum() - (sizes * scores).sum() ** 2 / total
 Z = numerator / sqrt(p_bar * (1 - p_bar) * spread)
 print("Z =", round(Z, 2), "; chi-square for trend =", round(Z ** 2, 1), "; p =", 2 * stats.norm.sf(abs(Z)))
-print("Kirkwood version (statistic times (N - 1)/N):", round(Z ** 2 * (total - 1) / total, 2))
 
 # 3. Ordinary chi-square with 3 degrees of freedom
 pearson = stats.chi2_contingency(np.array([events, sizes - events]))
