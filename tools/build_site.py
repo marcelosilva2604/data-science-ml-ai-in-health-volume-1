@@ -67,6 +67,8 @@ def build(ch, lang, label, title, blurb, rel):
     body = body.replace("<body", "<body", 1)
     i = body.find(">", body.find("<body")) + 1
     body = body[:i] + bar(f"{label}. {title}", lang) + body[i:]
+    ("ch14_en", "en", "Chapter 14", "Hypothesis Testing: Logic and the Standard Tests",
+     "Case: the quality committee of a two-hospital surgery department tests its targets on a registry of 800 operated patients.", "chapters/ch14/ch14_hypothesis_testing_en.ipynb"),
     (DOCS / f"{ch}.html").write_text(body, encoding="utf-8")
     print("built", ch)
 
