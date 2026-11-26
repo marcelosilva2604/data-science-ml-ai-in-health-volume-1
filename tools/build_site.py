@@ -71,6 +71,8 @@ def build(ch, lang, label, title, blurb, rel):
     body = body[:i] + bar(f"{label}. {title}", lang) + body[i:]
     ("ch14_en", "en", "Chapter 14", "Hypothesis Testing: Logic and the Standard Tests",
      "Case: the quality committee of a two-hospital surgery department tests its targets on a registry of 800 operated patients.", "chapters/ch14/ch14_hypothesis_testing_en.ipynb"),
+    ("ch15_en", "en", "Chapter 15", "The Meaning of a P-Value: Intervals, Noninferiority, and Interim Analyses",
+     "Case: a hospital network's stewardship committee reads a randomized trial of 7 versus 14 days of antibiotics in 1,200 patients.", "chapters/ch15/ch15_pvalue_meaning_en.ipynb"),
     (DOCS / f"{ch}.html").write_text(body, encoding="utf-8")
     print("built", ch)
 
